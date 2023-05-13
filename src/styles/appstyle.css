@@ -1,0 +1,26 @@
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  background: rgb(234, 255, 167);
+}
+
+.counter-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  > h1 {
+    font-size: 10rem;
+  }
+  > .cta-container {
+    > button {
+      width: 50px;
+      height: 50px;
+      outline: none;
+    }
+  }
+}
