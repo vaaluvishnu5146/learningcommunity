@@ -1,11 +1,12 @@
 import React from "react";
 import { CounterPage } from "./Pages/Counter";
 import PricingDetails from "./Pages/PricingDetails";
+import Products from "./Pages/Products";
+
 function App() {
-  const page = "pricing";
   return (
     <div className="App">
-      {page === "pricing" ? <PricingDetails /> : <CounterPage />}
+      <Products />
     </div>
   );
 }

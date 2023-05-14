@@ -1,0 +1,25 @@
+{
+  "courses": [
+    {
+      "courseName": "Basics of Web",
+      "courseImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgGXbRowJsdXOsU4IDsTy-HaP63QH6wb37CESq4rgA&s",
+      "isForSale": true,
+      "actualPrice": 300,
+      "discountPrice": 250
+    },
+    {
+      "courseName": "Basics of HTML5",
+      "courseImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk64SzG5I7cECxQMHomU2zPMd-6oqSrHNKlNDNBAtiS4f5bpmnsFXxdmRX8LWTyN4Yt8g&usqp=CAU",
+      "isForSale": true,
+      "actualPrice": 400,
+      "discountPrice": 350
+    },
+    {
+      "courseName": "Basics of CSS3",
+      "courseImage": "https://contentstatic.techgig.com/thumb/msid-90527763,width-460,resizemode-4/Top-CSS-features-to-look-out-for-in-2022.jpg?4422",
+      "isForSale": false,
+      "actualPrice": 250,
+      "discountPrice": 220
+    }
+  ]
+}
