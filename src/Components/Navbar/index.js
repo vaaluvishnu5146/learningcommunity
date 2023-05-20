@@ -1,12 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar({ brand = "", cartCount = 0 }) {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container px-4 px-lg-5">
-        <a className="navbar-brand" href="#!">
+        <Link to="/courses" className="navbar-brand">
           {brand}
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -21,20 +22,24 @@ export default function Navbar({ brand = "", cartCount = 0 }) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#!">
+              <Link
+                to={"/courses"}
+                className="nav-link active"
+                aria-current="page"
+              >
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#!">
-                About
+                Courses
               </a>
             </li>
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
                 id="navbarDropdown"
-                href="#"
+                href="#!"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -64,13 +69,13 @@ export default function Navbar({ brand = "", cartCount = 0 }) {
             </li>
           </ul>
           <form className="d-flex">
-            <button className="btn btn-outline-dark" type="submit">
+            <Link to={"/cart"} className="btn btn-outline-dark">
               <i className="bi-cart-fill me-1"></i>
               Cart
               <span className="badge bg-dark text-white ms-1 rounded-pill">
                 {cartCount}
               </span>
-            </button>
+            </Link>
           </form>
         </div>
       </div>

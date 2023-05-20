@@ -1,25 +1,47 @@
 {
   "courses": [
     {
-      "courseName": "Basics of Web",
+      "id": 1,
+      "courseName": "Web Development",
       "courseImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgGXbRowJsdXOsU4IDsTy-HaP63QH6wb37CESq4rgA&s",
       "isForSale": true,
-      "actualPrice": 300,
-      "discountPrice": 250
+      "rating": 3
     },
     {
-      "courseName": "Basics of HTML5",
+      "id": 2,
+      "courseName": "Full Stack Development",
       "courseImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk64SzG5I7cECxQMHomU2zPMd-6oqSrHNKlNDNBAtiS4f5bpmnsFXxdmRX8LWTyN4Yt8g&usqp=CAU",
-      "isForSale": true,
-      "actualPrice": 400,
-      "discountPrice": 350
+      "isForSale": true
     },
     {
-      "courseName": "Basics of CSS3",
-      "courseImage": "https://contentstatic.techgig.com/thumb/msid-90527763,width-460,resizemode-4/Top-CSS-features-to-look-out-for-in-2022.jpg?4422",
-      "isForSale": false,
-      "actualPrice": 250,
-      "discountPrice": 220
+      "id": 3,
+      "courseName": "Artificial Inteligence",
+      "courseImage": "https://itchronicles.com/wp-content/uploads/2020/11/where-is-ai-used.jpg",
+      "isForSale": false
+    },
+    {
+      "id": 4,
+      "courseName": "Machine Learning",
+      "courseImage": "https://miro.medium.com/v2/resize:fit:1400/1*cG6U1qstYDijh9bPL42e-Q.jpeg",
+      "isForSale": false
+    },
+    {
+      "id": 5,
+      "courseName": "Data Science",
+      "courseImage": "https://logicmojo.com/assets/dist/new_pages/images/datasci.jpg",
+      "isForSale": false
+    },
+    {
+      "id": "6",
+      "courseName": "Android Application Development",
+      "courseImage": "https://www.codingbytes.com/wp-content/uploads/2023/02/app-development.jpg",
+      "isForSale": false
+    },
+    {
+      "id": "7",
+      "courseName": "Apple Application Development",
+      "courseImage": "https://uncannycs.com/wp-content/uploads/2022/08/ios-app-development-services-solutions-company.webp",
+      "isForSale": false
     }
   ]
 }

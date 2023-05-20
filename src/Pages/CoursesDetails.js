@@ -1,35 +1,20 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../Components/Navbar";
 import Header from "../Components/Header";
-import Footer from "../Components/Footer";
 import ProductCard from "../Components/Cards/ProductCard";
+import data from "../Assets/coursesDetails.json";
+import { useParams } from "react-router-dom";
 
-export default function Products() {
+export default function CoursesDetails({ cart = [], handleAddTocart = [] }) {
   const [courses, setCourses] = useState([]);
-  const [cart, setCart] = useState([]);
-
+  const { id = null } = useParams();
   useEffect(() => {
-    fetch("mocks/courses.json")
-      .then((response) => response.json())
-      .then((data) => {
-        if (data && data.courses.length > 0) {
-          setCourses(data.courses);
-        }
-      })
-      .catch((error) => console.log(error));
-  }, []);
-
-  function handleAddTocart(data = {}) {
-    if (data) {
-      let cartCopy = [...cart];
-      cartCopy.push(data);
-      setCart(cartCopy);
+    if (data && data.courses.length > 0 && id) {
+      setCourses(data.courses.filter((d) => d.categoryId === Number(id)));
     }
-  }
+  }, [id]);
 
   return (
     <div>
-      <Navbar brand="Learning community" cartCount={cart.length} />
       <Header
         heading="Shop your next course"
         description="Get Flat 15% discount on all courses"
@@ -50,12 +35,12 @@ export default function Products() {
                       ? true
                       : false
                   }
+                  isCartButtonVisible={true}
                 />
               ))}
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   );
 }

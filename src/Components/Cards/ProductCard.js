@@ -1,12 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function ProductCard({
   product = {},
   handleAddToCart = (data) => {},
   disabled = () => {},
+  isCartButtonVisible = false,
 }) {
   return (
-    <div className="col mb-5">
+    <div className="col-xl-4 col-lg-4 col-md-4 mb-5">
       <div className="card h-100">
         {product.isForSale && (
           <div
@@ -28,24 +30,47 @@ export default function ProductCard({
 
         <div className="card-body p-4">
           <div className="text-center">
-            <h5 className="fw-bolder">{product.courseName}</h5>
-            <span className="text-muted fw-bolder text-decoration-line-through">
-              ₹{product.actualPrice}
-            </span>
-            ₹{product.discountPrice}
+            <h5 className="fw-bolder">
+              <Link
+                style={{
+                  textDecoration: "none",
+                }}
+                to={`/courses/${product.id}`}
+              >
+                <p className="course-name">{product.courseName}</p>
+              </Link>
+            </h5>
+            {product.actualPrice && (
+              <div>
+                <p
+                  style={{
+                    textAlign: "start",
+                  }}
+                >
+                  <span className="text-muted fw-bolder text-decoration-line-through">
+                    ₹{product.actualPrice}
+                  </span>
+                  <span className="text-muted fw-bolder">
+                    ₹{product.discountPrice}
+                  </span>
+                </p>
+              </div>
+            )}
           </div>
         </div>
-        <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-          <div className="text-center">
-            <button
-              className="btn btn-outline-dark mt-auto"
-              onClick={() => handleAddToCart(product)}
-              disabled={disabled}
-            >
-              Add to cart
-            </button>
+        {isCartButtonVisible && (
+          <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <div className="text-center">
+              <button
+                className="btn btn-outline-dark mt-auto"
+                onClick={() => handleAddToCart(product)}
+                disabled={disabled}
+              >
+                Add to cart
+              </button>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
