@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Header from "../Components/Header";
-import ProductCard from "../Components/Cards/ProductCard";
 import CategoryCard from "../Components/Cards/CategoryCard";
 
 export default function Courses({ cart, handleAddTocart }) {
