@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// CHNAGE THE STYLE OF THE PRODUCT CARD TO: https://dribbble.com/shots/6649685-Course-Card-UI-Design
 export default function ProductCard({
   product = {},
   handleAddToCart = (data) => {},

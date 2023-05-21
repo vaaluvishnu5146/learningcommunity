@@ -1,7 +1,28 @@
+:root {
+  --primaryPalette: #2e3379;
+  --secondaryPalette100: #763eef;
+  --secondaryPalette200: #9566fa;
+  --greyPalette: #e6e6e6;
+  --light: #ffffff;
+}
+
 html,
 body {
   margin: 0px;
   padding: 0px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* BUTTON */
+
+.btn-course {
+  background: var(--secondaryPalette100);
+  color: var(--light);
+}
+
+.btn-course:hover {
+  background-color: var(--secondaryPalette200);
+  color: var(--light);
 }
 
 .counter-container {
@@ -24,9 +45,53 @@ body {
   }
 }
 
+/* CATEGORYCARD */
+.categorycard-container {
+  > .categorycard {
+    padding: 3px;
+    box-sizing: border-box;
+
+    > .card-body {
+    }
+  }
+}
+
 .course-name {
   font-size: 1.2rem;
   text-decoration: none;
-  color: black;
   text-align: start;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: clip;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  border: 1px solid var(--greyPalette);
+}
+
+/* CART PAGE STYLES */
+
+.cart-counter {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  > .btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+  }
+
+  > p {
+    margin-bottom: 0px;
+  }
+}
+
+.discountPrice {
+  color: var(--bs-red);
+  font-weight: bold;
 }

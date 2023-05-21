@@ -1,0 +1,13 @@
+1. Components - In depth
+   
+   There are two types of component:
+
+   1. Class - Its already dead
+   2. Functional - Its the recent trend, its highly readable, its has simple life cycle methods.
+
+
+2. Component life cycle
+3. Stateful and stateless components
+4. Reusable components 
+5. Passing dynamic data to component
+6. Introduction to Hook

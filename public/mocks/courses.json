@@ -5,43 +5,62 @@
       "courseName": "Web Development",
       "courseImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgGXbRowJsdXOsU4IDsTy-HaP63QH6wb37CESq4rgA&s",
       "isForSale": true,
-      "rating": 3
+      "rating": 3,
+      "description": "Web development course helps you to learn the basic of web development and helps you to build real world projects",
+      "tags": ["Website", "Web Apps", "Html5", "Css3", "Javascript"],
+      "averageCourseDuration": 6
     },
     {
       "id": 2,
       "courseName": "Full Stack Development",
       "courseImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk64SzG5I7cECxQMHomU2zPMd-6oqSrHNKlNDNBAtiS4f5bpmnsFXxdmRX8LWTyN4Yt8g&usqp=CAU",
-      "isForSale": true
+      "isForSale": true,
+      "description": "Full Stack Development course helps you to learn the basic of web development, basics of servers and Api's and helps you to build real world projects",
+      "tags": [
+        "Website",
+        "Web Apps",
+        "Html5",
+        "Css3",
+        "Javascript",
+        "Server, Nodejs",
+        "MongoDB"
+      ],
+      "averageCourseDuration": 6
     },
     {
       "id": 3,
       "courseName": "Artificial Inteligence",
       "courseImage": "https://itchronicles.com/wp-content/uploads/2020/11/where-is-ai-used.jpg",
-      "isForSale": false
+      "isForSale": false,
+      "tags": ["AI", "Computers", "Neural Networks"]
     },
     {
       "id": 4,
       "courseName": "Machine Learning",
       "courseImage": "https://miro.medium.com/v2/resize:fit:1400/1*cG6U1qstYDijh9bPL42e-Q.jpeg",
-      "isForSale": false
+      "isForSale": false,
+      "tags": ["Maths", "Algotithms"]
     },
     {
       "id": 5,
       "courseName": "Data Science",
       "courseImage": "https://logicmojo.com/assets/dist/new_pages/images/datasci.jpg",
-      "isForSale": false
+      "isForSale": false,
+      "tags": ["Maths", "Python", "Pandas", "Keras"]
     },
     {
       "id": "6",
       "courseName": "Android Application Development",
       "courseImage": "https://www.codingbytes.com/wp-content/uploads/2023/02/app-development.jpg",
-      "isForSale": false
+      "isForSale": false,
+      "tags": ["Android Studio", "Android Basics"]
     },
     {
       "id": "7",
       "courseName": "Apple Application Development",
       "courseImage": "https://uncannycs.com/wp-content/uploads/2022/08/ios-app-development-services-solutions-company.webp",
-      "isForSale": false
+      "isForSale": false,
+      "tags": ["XCode", "Swift", "IOS Basics"]
     }
   ]
 }

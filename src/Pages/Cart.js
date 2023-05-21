@@ -1,12 +1,19 @@
 import React from "react";
+import CartCard from "../Components/Cards/CartCard";
 
-export default function Cart() {
+export default function Cart({ cart = [] }) {
   return (
     <div>
       <section className="py-5">
         <div className="container px-4 px-lg-5 mt-5">
-          <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            sdasdasd
+          <div className="row">
+            <div className="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12">
+              {cart &&
+                cart.map((d, i) => (
+                  <CartCard key={`cart-items-${i}`} data={d} />
+                ))}
+            </div>
+            <div className="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
           </div>
         </div>
       </section>
