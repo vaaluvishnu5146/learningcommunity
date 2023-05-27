@@ -22,17 +22,13 @@ export default function Navbar({ brand = "", cartCount = 0 }) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
             <li className="nav-item">
-              <Link
-                to={"/home"}
-                className="nav-link active"
-                aria-current="page"
-              >
+              <Link to={"/"} className="nav-link active" aria-current="page">
                 Home
               </Link>
             </li>
             <li className="nav-item">
               <Link
-                to={"/courses"}
+                to={"courses"}
                 className="nav-link active"
                 aria-current="page"
               >
@@ -41,7 +37,7 @@ export default function Navbar({ brand = "", cartCount = 0 }) {
             </li>
           </ul>
           <form className="d-flex">
-            <Link to={"/cart"} className="btn btn-outline-dark">
+            <Link to={"cart"} className="btn btn-outline-dark">
               <i className="bi-cart-fill me-1"></i>
               Cart
               <span className="badge bg-dark text-white ms-1 rounded-pill">

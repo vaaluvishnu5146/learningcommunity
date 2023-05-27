@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import Header from "../Components/Header";
 import ProductCard from "../Components/Cards/ProductCard";
 import data from "../Assets/coursesDetails.json";
@@ -12,6 +12,16 @@ export default function CoursesDetails({ cart = [], handleAddTocart = [] }) {
       setCourses(data.courses.filter((d) => d.categoryId === Number(id)));
     }
   }, [id]);
+
+  useEffect(() => {
+    console.log("Course Details Page Rendered");
+    return () => {};
+  }, []);
+
+  useLayoutEffect(() => {
+    console.log("Cart changed");
+    return () => {};
+  }, [cart]);
 
   return (
     <div>

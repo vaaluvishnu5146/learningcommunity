@@ -21,18 +21,32 @@ function App(props) {
   };
   return (
     <div className="App">
-      <Navbar brand="Learning community" cartCount={cart.length} />
       <Routes>
-        {APP_ROUTES.map((route, index) => (
-          <Route
-            key={`app-routes-${route.name}-${index}`}
-            path={route.path}
-            element={<route.Component {...newProps} />}
-            {...props}
-          />
-        ))}
+        {APP_ROUTES.map((route, index) => {
+          console.log(route);
+          return (
+            <Route
+              key={`app-routes-${route.name}-${index}`}
+              path={route.path}
+              element={<route.Component {...newProps} pageTitle={route.name} />}
+              {...props}
+            >
+              {route.Children &&
+                route.Children.map((r, i) => {
+                  console.log(r);
+                  return (
+                    <Route
+                      key={`app-sub-routes-${r.name}-${i}`}
+                      path={r.path}
+                      element={<r.Component {...newProps} pageTitle={r.name} />}
+                      {...props}
+                    />
+                  );
+                })}
+            </Route>
+          );
+        })}
       </Routes>
-      <Footer />
     </div>
   );
 }
