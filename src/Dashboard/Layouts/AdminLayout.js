@@ -2,8 +2,10 @@ import React from "react";
 import "../Styles/admin.min.css";
 import Sidebar from "../Components/Sidebar/Sidebar";
 import Navbar from "../Components/Navbar/Navbar";
+import { useCart } from "../../Context/CartContext";
 
 export default function AdminLayout({ children }) {
+  const cart = useCart();
   return (
     <div>
       <div id="wrapper">
@@ -11,6 +13,7 @@ export default function AdminLayout({ children }) {
         <div id="content-wrapper" className="d-flex flex-column">
           <div id="content">
             <Navbar />
+            <p>Hello : {cart.length || "NA"}</p>
             <div className="container-fluid">{children}</div>
           </div>
           <footer className="sticky-footer bg-white">

@@ -1,6 +1,8 @@
 import React from "react";
+import { useCart } from "../../Context/CartContext";
 
 export default function CartCard({ data = {} }) {
+  const { handleQuantity = (type, id) => {} } = useCart();
   return (
     <div className="card mb-3">
       <div className="row">
@@ -30,9 +32,19 @@ export default function CartCard({ data = {} }) {
         </div>
         <div className="col-2 p-3 d-flex align-items-end">
           <div className="cart-counter">
-            <button className="btn btn-primary btn-sm">-</button>
-            <p>1</p>
-            <button className="btn btn-primary btn-sm">+</button>
+            <button
+              className="btn btn-primary btn-sm"
+              onClick={() => handleQuantity("dec", data.id)}
+            >
+              -
+            </button>
+            <p>{data.quantity}</p>
+            <button
+              className="btn btn-primary btn-sm"
+              onClick={() => handleQuantity("inc", data.id)}
+            >
+              +
+            </button>
           </div>
         </div>
       </div>

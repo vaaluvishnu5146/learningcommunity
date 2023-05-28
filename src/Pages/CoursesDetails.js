@@ -3,15 +3,21 @@ import Header from "../Components/Header";
 import ProductCard from "../Components/Cards/ProductCard";
 import data from "../Assets/coursesDetails.json";
 import { useParams } from "react-router-dom";
+import { useCart } from "../Context/CartContext";
 
-export default function CoursesDetails({ cart = [], handleAddTocart = [] }) {
+export default function CoursesDetails(props) {
   const [courses, setCourses] = useState([]);
-  const { id = null } = useParams();
+  const { categoryId = null } = useParams();
+
+  const { cart = [], handleAddTocart = (d) => {} } = useCart();
+
   useEffect(() => {
-    if (data && data.courses.length > 0 && id) {
-      setCourses(data.courses.filter((d) => d.categoryId === Number(id)));
+    if (data && data.courses.length > 0 && categoryId) {
+      setCourses(
+        data.courses.filter((d) => d.categoryId === Number(categoryId))
+      );
     }
-  }, [id]);
+  }, [categoryId]);
 
   useEffect(() => {
     console.log("Course Details Page Rendered");
@@ -24,7 +30,7 @@ export default function CoursesDetails({ cart = [], handleAddTocart = [] }) {
   }, [cart]);
 
   return (
-    <div>
+    <>
       <Header
         heading="Shop your next course"
         description="Get Flat 15% discount on all courses"
@@ -51,6 +57,6 @@ export default function CoursesDetails({ cart = [], handleAddTocart = [] }) {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }

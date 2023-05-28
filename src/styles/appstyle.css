@@ -95,3 +95,7 @@ body {
   color: var(--bs-red);
   font-weight: bold;
 }
+
+.content-area-height {
+  height: calc(100vh - 48px);
+}

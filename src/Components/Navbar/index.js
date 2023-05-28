@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "../../Context/CartContext";
 
-export default function Navbar({ brand = "", cartCount = 0 }) {
+export default function Navbar({ brand = "" }) {
+  const { cart = [] } = useCart();
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container px-4 px-lg-5">
@@ -41,7 +43,7 @@ export default function Navbar({ brand = "", cartCount = 0 }) {
               <i className="bi-cart-fill me-1"></i>
               Cart
               <span className="badge bg-dark text-white ms-1 rounded-pill">
-                {cartCount}
+                {cart.length}
               </span>
             </Link>
           </form>

@@ -1,7 +1,62 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+const journeys = [
+  {
+    label: "User Journey",
+    id: "userCollapsed",
+    path: [
+      {
+        label: "Create User",
+        path: "/dashboard/",
+      },
+      {
+        label: "Update User",
+        path: "updateUser",
+      },
+    ],
+  },
+  {
+    label: "Course Journey",
+    id: "courseCollapsed",
+    path: [
+      {
+        label: "Create Category",
+        path: "createCategory",
+      },
+      {
+        label: "Update Category",
+        path: "updateCategory",
+      },
+    ],
+  },
+  {
+    label: "Students Journey",
+    id: "studentsCollapsed",
+    path: [
+      {
+        label: "Create Category",
+        path: "createCategory",
+      },
+      {
+        label: "Update Category",
+        path: "updateCategory",
+      },
+    ],
+  },
+];
+
 export default function Sidebar() {
+  const handleCollapsed = (e, id) => {
+    const element = document.getElementById(id);
+    console.log(element.classList);
+    if (element && element.classList.contains("show")) {
+      element.classList.remove("show");
+    } else {
+      element.classList.add("show");
+    }
+  };
+
   return (
     <ul
       className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
@@ -19,67 +74,34 @@ export default function Sidebar() {
 
       <hr className="sidebar-divider" />
 
-      <div className="sidebar-heading">Users Journey</div>
-
-      <li className="nav-item">
-        <a
-          className="nav-link collapsed"
-          href="#"
-          data-toggle="collapse"
-          data-target="#collapseTwo"
-          aria-expanded="true"
-          aria-controls="collapseTwo"
-        >
-          <i className="fas fa-fw fa-cog"></i>
-          <span>Users</span>
-        </a>
-        <div
-          id="collapseTwo"
-          className="collapse show"
-          aria-labelledby="headingTwo"
-          data-parent="#accordionSidebar"
-        >
-          <div className="bg-white py-2 collapse-inner rounded">
-            <Link className="collapse-item" to="/dashboard/">
-              Create Users
-            </Link>
-            <Link className="collapse-item" to="updateUser">
-              Manage Users
-            </Link>
+      {journeys.map((_j, index) => {
+        return (
+          <div key={`${_j.label}-${index}`}>
+            <li className="nav-item">
+              <button
+                className="nav-link"
+                onClick={(e) => handleCollapsed(e, _j.id)}
+              >
+                <span>{_j.label}</span>
+                <i className="fas fa-fw fa-cog"></i>
+              </button>
+              <div id={_j.id} className="collapse">
+                <div className="bg-white py-2 collapse-inner rounded">
+                  {_j.path.map((_l, index) => (
+                    <Link
+                      key={`${_l.label}-${index}`}
+                      className="collapse-item"
+                      to={_l.path}
+                    >
+                      {_l.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </li>
           </div>
-        </div>
-      </li>
-
-      <div className="sidebar-heading">Course Journey</div>
-
-      <li className="nav-item">
-        <a
-          className="nav-link collapsed"
-          href="#"
-          data-toggle="collapse"
-          data-target="#collapseTwo"
-          aria-expanded="true"
-          aria-controls="collapseTwo"
-        >
-          <i className="fas fa-fw fa-cog"></i>
-          <span>Categories</span>
-        </a>
-        <div
-          id="collapseTwo"
-          className="collapse show"
-          aria-labelledby="headingTwo"
-          data-parent="#accordionSidebar"
-        >
-          <div className="bg-white py-2 collapse-inner rounded">
-            <Link className="collapse-item" to="createCategory">
-              Create Category
-            </Link>
-            <Link className="collapse-item" to="updateCategory">
-              Manage Category
-            </Link>
-          </div>
-        </div>
-      </li>
+        );
+      })}
 
       <hr className="sidebar-divider" />
 

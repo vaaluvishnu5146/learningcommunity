@@ -64,7 +64,7 @@ export default function ProductCard({
             <div className="text-center">
               <button
                 className="btn btn-outline-dark mt-auto"
-                onClick={() => handleAddToCart(product)}
+                onClick={() => handleAddToCart({ ...product, quantity: 1 })}
                 disabled={disabled}
               >
                 Add to cart

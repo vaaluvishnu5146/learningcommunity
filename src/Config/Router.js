@@ -8,6 +8,7 @@ import CreateUser from "../Dashboard/Pages/CreateUser";
 import UpdateUser from "../Dashboard/Pages/UpdateUser";
 import CreateCategory from "../Dashboard/Pages/CreateCategory";
 import UpdateCategory from "../Dashboard/Pages/UpdateCategory";
+import LandingPage from "../Pages/index";
 
 const APP_ROUTES = [
   {
@@ -43,10 +44,15 @@ const APP_ROUTES = [
     ],
   },
   {
-    name: "home",
+    name: "Landing Page",
     path: "/",
-    Component: Home,
+    Component: LandingPage,
     Children: [
+      {
+        name: "Home",
+        path: "/",
+        Component: Home,
+      },
       {
         name: "Courses",
         path: "courses",
@@ -54,7 +60,7 @@ const APP_ROUTES = [
       },
       {
         name: "Courses Details",
-        path: "courses/:id",
+        path: "courses/:categoryId",
         Component: CoursesDetails,
       },
       {
